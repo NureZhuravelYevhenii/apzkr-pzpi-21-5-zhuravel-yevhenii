@@ -1,0 +1,92 @@
+<ContentPage x:Class="VetAutoMobile.Pages.AnimalsPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:VetAutoMobile.Entities.Animals;assembly=VetAutoMobile.Entities"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewModels="clr-namespace:VetAutoMobile.ViewModels.PageViewModels"
+             Title="AnimalPage"
+             x:DataType="viewModels:AnimalViewModel">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding Loaded}"
+                                        EventName="Appearing" />
+    </ContentPage.Behaviors>
+
+    <StackLayout>
+        <StackLayout IsVisible="{Binding IsCurrentEntitySet}">
+            <Label FontAttributes="Bold"
+                   FontSize="Large"
+                   Text="Animal Details" />
+
+            <StackLayout>
+                <Label Text="Name:" />
+                <Entry Text="{Binding CurrentEntity.Name}" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Type ID:" />
+                <Picker ItemsSource="{Binding AnimalTypes}"
+                        SelectedItem="{Binding CurrentEntity.TypeId}" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Animal Center ID:" />
+                <Entry Text="{Binding CurrentEntity.AnimalCenterId}" />
+            </StackLayout>
+
+            <ContentView Content="{Binding MapControl}"
+                         HeightRequest="100"
+                         IsVisible="{Binding DoesAnimalHaveFeedingPlaces}"
+                         WidthRequest="100" />
+
+            <Button Command="{Binding Update}"
+                    Text="Update" />
+            <Button Command="{Binding BackToList}"
+                    Text="Back to list" />
+        </StackLayout>
+        <StackLayout IsVisible="{Binding IsCreating}">
+            <Label FontAttributes="Bold"
+                   FontSize="Large"
+                   Text="Animal Details" />
+
+            <StackLayout>
+                <Label Text="Name:" />
+                <Entry Text="{Binding NewEntity.Name}" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Type ID:" />
+                <Picker ItemsSource="{Binding AnimalTypes}"
+                        SelectedItem="{Binding NewEntity.TypeId}" />
+            </StackLayout>
+
+            <Button Command="{Binding Create}"
+                    Text="Create" />
+            <Button Command="{Binding BackToList}"
+                    Text="Back to list" />
+        </StackLayout>
+        <StackLayout IsVisible="{Binding IsCurrentEntityNotSet}">
+            <Label>Animals:</Label>
+            <ListView ItemsSource="{Binding Entities}"
+                      SelectionMode="Single">
+                <ListView.Behaviors>
+                    <toolkit:EventToCommandBehavior Command="{Binding GetEntity}"
+                                                    x:TypeArguments="SelectedItemChangedEventArgs"
+                                                    EventName="ItemSelected" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Animal">
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Name:" />
+                                <Label Text="{Binding Name}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Command="{Binding ToCreate}"
+                    Text="Create" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

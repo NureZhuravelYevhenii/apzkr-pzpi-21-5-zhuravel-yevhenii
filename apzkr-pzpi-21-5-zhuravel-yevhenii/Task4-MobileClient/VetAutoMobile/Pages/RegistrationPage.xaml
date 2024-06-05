@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="VetAutoMobile.Pages.RegistrationPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:VetAutoMobile.ViewModels.PageViewModels"
+             Title="Registration"
+             x:DataType="viewModels:RegistrationViewModel">
+    <StackLayout>
+        <Entry Placeholder="Username"
+               Text="{Binding Name}" />
+        <Entry IsPassword="True"
+               Placeholder="Password"
+               Text="{Binding Password}" />
+        <Entry IsPassword="True"
+               Placeholder="Confirm Password"
+               Text="{Binding ConfirmPassword}" />
+        <Entry Placeholder="Address"
+               Text="{Binding Address}" />
+        <Entry Placeholder="Info"
+               Text="{Binding Info}" />
+        <ListView ItemsSource="{Binding Errors}"/>
+        <Button Command="{Binding Register}"
+                Text="Register" />
+    </StackLayout>
+</ContentPage>

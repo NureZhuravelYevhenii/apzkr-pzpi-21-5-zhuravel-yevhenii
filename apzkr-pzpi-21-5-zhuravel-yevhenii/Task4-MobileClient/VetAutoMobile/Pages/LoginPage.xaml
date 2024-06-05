@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="VetAutoMobile.Pages.LoginPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:VetAutoMobile.ViewModels.PageViewModels"
+             Title="Login"
+             x:DataType="viewModels:LoginViewModel">
+    <StackLayout>
+        <Entry Placeholder="Login"
+               Text="{Binding Login}" />
+        <Entry IsPassword="True"
+               Placeholder="Password"
+               Text="{Binding Password}" />
+        <ListView ItemsSource="{Binding Errors}" />
+        <Button Command="{Binding LoginCommand}"
+                Text="Login" />
+    </StackLayout>
+</ContentPage>

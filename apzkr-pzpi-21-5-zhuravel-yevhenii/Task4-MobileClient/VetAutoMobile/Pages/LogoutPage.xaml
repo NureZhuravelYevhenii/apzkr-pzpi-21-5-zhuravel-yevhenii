@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="VetAutoMobile.Pages.LogoutPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="LogoutPage">
+    <VerticalStackLayout>
+        <Label HorizontalOptions="Center"
+               Text="Do you want to logout?"
+               VerticalOptions="Center" />
+        <Button Text="Logout" Command="{Binding Logout}"/>
+    </VerticalStackLayout>
+</ContentPage>

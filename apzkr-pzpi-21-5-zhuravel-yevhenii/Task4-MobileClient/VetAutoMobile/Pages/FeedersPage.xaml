@@ -1,0 +1,79 @@
+<ContentPage x:Class="VetAutoMobile.Pages.FeedersPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:VetAutoMobile.Entities.Feeders;assembly=VetAutoMobile.Entities"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewModels="clr-namespace:VetAutoMobile.ViewModels.PageViewModels"
+             Title="FeederPage"
+             x:DataType="viewModels:FeederViewModel">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding Loaded}"
+                                        EventName="Appearing" />
+    </ContentPage.Behaviors>
+
+    <StackLayout>
+        <StackLayout IsVisible="{Binding IsCurrentEntitySet}">
+            <Label FontAttributes="Bold"
+                   FontSize="Large"
+                   Text="Feeder Details" />
+
+            <StackLayout>
+                <Label Text="Location:" />
+                <Entry Text="{Binding CurrentEntity.Location}" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Animal Center ID:" />
+                <Entry Text="{Binding CurrentEntity.AnimalCenterId}" />
+            </StackLayout>
+
+            <Button Command="{Binding Update}"
+                    Text="Update" />
+            <Button Command="{Binding BackToList}"
+                    Text="Back to list" />
+        </StackLayout>
+        <StackLayout IsVisible="{Binding IsCreating}">
+            <Label FontAttributes="Bold"
+                   FontSize="Large"
+                   Text="Feeder Details" />
+
+            <StackLayout>
+                <Label Text="Location:" />
+                <Entry Text="{Binding NewEntity.Location}" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Animal Center ID:" />
+                <Entry Text="{Binding NewEntity.AnimalCenterId}" />
+            </StackLayout>
+
+            <Button Command="{Binding Create}"
+                    Text="Create" />
+            <Button Command="{Binding BackToList}"
+                    Text="Back to list" />
+        </StackLayout>
+        <StackLayout IsVisible="{Binding IsCurrentEntityNotSet}">
+            <Label>Feeders:</Label>
+            <ListView ItemsSource="{Binding Entities}"
+                      SelectionMode="Single">
+                <ListView.Behaviors>
+                    <toolkit:EventToCommandBehavior Command="{Binding GetEntity}"
+                                                    x:TypeArguments="SelectedItemChangedEventArgs"
+                                                    EventName="ItemSelected" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Feeder">
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Location:" />
+                                <Label Text="{Binding Location}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Create" Command="{Binding ToCreate}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

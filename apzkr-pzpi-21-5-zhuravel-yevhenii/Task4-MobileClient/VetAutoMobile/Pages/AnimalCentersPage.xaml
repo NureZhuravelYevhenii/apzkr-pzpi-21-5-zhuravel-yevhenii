@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="VetAutoMobile.Pages.AnimalCentersPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:VetAutoMobile.Entities.AnimalCenters;assembly=VetAutoMobile.Entities"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewModels="clr-namespace:VetAutoMobile.ViewModels.PageViewModels"
+             Title="AnimalCentersPage"
+             x:DataType="viewModels:AnimalCenterViewModel">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding Loaded}"
+                                        EventName="Appearing" />
+    </ContentPage.Behaviors>
+
+    <StackLayout>
+        <StackLayout IsVisible="{Binding IsCurrentEntitySet}">
+            <Label FontAttributes="Bold"
+                   FontSize="Large"
+                   Text="Animal Center Details" />
+
+            <StackLayout>
+                <Label Text="Name:" />
+                <Entry Text="{Binding CurrentEntity.Name}" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Address:" />
+                <Entry Text="{Binding CurrentEntity.Address}" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Info:" />
+                <Entry Text="{Binding CurrentEntity.Info}" />
+            </StackLayout>
+
+            <Button Command="{Binding Update}"
+                    Text="Update" />
+            <Button Command="{Binding BackToList}"
+                    Text="Back to list" />
+        </StackLayout>
+        <StackLayout IsVisible="{Binding IsCurrentEntityNotSet}">
+            <Label>Animal centers:</Label>
+            <ListView ItemsSource="{Binding Entities}"
+                      SelectionMode="Single">
+                <ListView.Behaviors>
+                    <toolkit:EventToCommandBehavior Command="{Binding GetEntity}"
+                                                    x:TypeArguments="SelectedItemChangedEventArgs"
+                                                    EventName="ItemSelected" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:AnimalCenter">
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="Name:" />
+                                <Label Text="{Binding Name}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

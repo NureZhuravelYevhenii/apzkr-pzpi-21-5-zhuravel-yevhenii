@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VetAutoIoT", "VetAutoIoT.csproj", "{A415FF32-B853-4FE1-A757-EC6C93DD3B5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VetAutoIoT.Console", "..\VetAutoIoT.Console\VetAutoIoT.Console.csproj", "{1C171279-8A35-4AEA-9ACB-5AC8A8E63A2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VetAutoIoT.Core", "..\VetAutoIoT.Core\VetAutoIoT.Core.csproj", "{DF88BE2A-E28A-416E-B4AA-BBD9F7AB1AFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VetAutoIoT.Abstractions", "..\VetAutoIoT.Abstractions\VetAutoIoT.Abstractions.csproj", "{99D12004-47F0-40CC-B01E-32EA213117E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VetAutoIoT.Entities", "..\VetAutoIoT.Entities\VetAutoIoT.Entities.csproj", "{4218A27D-E117-43B3-B177-B72D2827D2FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VetAutoIoT.ApiLayer", "..\VetAutoIoT.ApiLayer\VetAutoIoT.ApiLayer.csproj", "{B130E594-F1FB-41C0-8C23-80223FF2F41C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VetAutoIoT.ApiLayer.Abstractions", "..\VetAutoIoT.ApiLayer.Abstractions\VetAutoIoT.ApiLayer.Abstractions.csproj", "{FF938617-02EB-4167-991D-62D3B2D1FFA8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VetAutoIoT.Core.Abstractions", "..\VetAutoIoT.Core.Abstractions\VetAutoIoT.Core.Abstractions.csproj", "{0E334653-02A2-4A5A-BF40-E44DFDD7278C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VetAutoIoT.ApiLayer.Entities", "..\VetAutoIoT.ApiLayer.Entities\VetAutoIoT.ApiLayer.Entities.csproj", "{712D91DF-8BD8-4A75-96A7-586B32D50AB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetAutoIoT.Persistence", "..\VetAutoIoT.Persistance\VetAutoIoT.Persistence.csproj", "{60B73BB1-13DA-440B-A3CC-514A0EA9F921}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetAutoIoT.Persistence.Abstractions", "..\VetAutoIoT.Persistance.Abstractions\VetAutoIoT.Persistence.Abstractions.csproj", "{B44CF40E-D30F-41E3-9B72-E9AA912B3CF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A415FF32-B853-4FE1-A757-EC6C93DD3B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A415FF32-B853-4FE1-A757-EC6C93DD3B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A415FF32-B853-4FE1-A757-EC6C93DD3B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A415FF32-B853-4FE1-A757-EC6C93DD3B5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C171279-8A35-4AEA-9ACB-5AC8A8E63A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C171279-8A35-4AEA-9ACB-5AC8A8E63A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C171279-8A35-4AEA-9ACB-5AC8A8E63A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C171279-8A35-4AEA-9ACB-5AC8A8E63A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF88BE2A-E28A-416E-B4AA-BBD9F7AB1AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF88BE2A-E28A-416E-B4AA-BBD9F7AB1AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF88BE2A-E28A-416E-B4AA-BBD9F7AB1AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF88BE2A-E28A-416E-B4AA-BBD9F7AB1AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99D12004-47F0-40CC-B01E-32EA213117E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D12004-47F0-40CC-B01E-32EA213117E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D12004-47F0-40CC-B01E-32EA213117E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D12004-47F0-40CC-B01E-32EA213117E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4218A27D-E117-43B3-B177-B72D2827D2FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4218A27D-E117-43B3-B177-B72D2827D2FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4218A27D-E117-43B3-B177-B72D2827D2FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4218A27D-E117-43B3-B177-B72D2827D2FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B130E594-F1FB-41C0-8C23-80223FF2F41C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B130E594-F1FB-41C0-8C23-80223FF2F41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B130E594-F1FB-41C0-8C23-80223FF2F41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B130E594-F1FB-41C0-8C23-80223FF2F41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF938617-02EB-4167-991D-62D3B2D1FFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF938617-02EB-4167-991D-62D3B2D1FFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF938617-02EB-4167-991D-62D3B2D1FFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF938617-02EB-4167-991D-62D3B2D1FFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E334653-02A2-4A5A-BF40-E44DFDD7278C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E334653-02A2-4A5A-BF40-E44DFDD7278C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E334653-02A2-4A5A-BF40-E44DFDD7278C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E334653-02A2-4A5A-BF40-E44DFDD7278C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712D91DF-8BD8-4A75-96A7-586B32D50AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712D91DF-8BD8-4A75-96A7-586B32D50AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712D91DF-8BD8-4A75-96A7-586B32D50AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712D91DF-8BD8-4A75-96A7-586B32D50AB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B73BB1-13DA-440B-A3CC-514A0EA9F921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B73BB1-13DA-440B-A3CC-514A0EA9F921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B73BB1-13DA-440B-A3CC-514A0EA9F921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B73BB1-13DA-440B-A3CC-514A0EA9F921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B44CF40E-D30F-41E3-9B72-E9AA912B3CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B44CF40E-D30F-41E3-9B72-E9AA912B3CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B44CF40E-D30F-41E3-9B72-E9AA912B3CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B44CF40E-D30F-41E3-9B72-E9AA912B3CF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {076DDB9B-2711-472B-8869-495F3993C71B}
+	EndGlobalSection
+EndGlobal
